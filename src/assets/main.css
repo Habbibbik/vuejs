@@ -1,0 +1,110 @@
+@import './base.css';
+
+#app {
+    min-height: 100vh;
+    padding: 96px 0 0;
+    display: flex;
+    flex-direction: column;
+
+    @media only screen and (max-width: 1024px) {
+        padding-top: 52px;
+    }
+}
+
+.img-responsive {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.container {
+    max-width: 1312px;
+    padding: 0 16px;
+    margin: 0 auto;
+    
+    @media only screen and (max-width: 1200px) {
+        max-width: 960px;
+    }
+
+    @media only screen and (max-width: 1024px) {
+        max-width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 48px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background-color: var(--background-brand-active);
+    border-radius: 28px;
+    cursor: pointer;
+    transition: background-color .4s, color .4s;
+
+    &.btn--black {
+        border-radius: 28px;
+        border: 1px solid rgba(0, 0, 0, 0.40);
+        background: var(--background-secondary);
+
+        &:hover {
+            color: #000;
+            background-color: #fff;
+        }
+
+        &:disabled {
+            pointer-events: none;
+            color: var(--content-disabled);
+            border-color: var(--content-placeholder);
+            background: var(--background-black-disabled);
+        }
+    }
+
+    &.btn--text {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        color: #000;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    &.btn--round {
+        padding-right: 22px;
+        padding-left: 22px;
+    }
+
+    &:hover {
+        background-color: var(--background-brand-hovered);
+    }
+
+    &:disabled {
+        pointer-events: none;
+        color: var(--content-disabled);
+        background-color: var(--background-brand-disabled);
+    }
+
+    @media only screen and (max-width: 1024px) {
+        padding-right: 42px;
+        padding-left: 42px;
+    }
+}
+
+input {
+    transition: border-color .4s, background-image .4s;
+
+    &:hover,
+    &:focus {
+        border-color: var(--content-active) !important;
+    }
+}
